@@ -1,42 +1,117 @@
-# AWS-3-Tier-Web-Application-Architecture-Project
-## 🚀 Project Overview
-This project demonstrates the design and implementation of a highly available, secure, and scalable 3-tier web application architecture on AWS.
+# 🚀 AWS 3-Tier Web Application Deployment
 
-## 🏗️ Architecture
-The application is divided into three layers:
-- Web Tier (EC2 + Load Balancer)
-- Application Tier (EC2 in private subnet)
-- Database Tier (Amazon Aurora RDS)
+## 📌 Project Overview
+This project demonstrates the deployment of a highly available and scalable **3-tier web application architecture on AWS**.
 
-## 🔧 Services Used
-- Amazon VPC
-- EC2 Instances
-- Elastic Load Balancer (ELB)
-- Amazon Aurora (RDS)
-- Auto Scaling (optional)
+The architecture follows best practices including:
+- Multi-AZ deployment
+- Load balancing
+- Secure network design using VPC
+- Scalable EC2 instances
+- Managed database using Amazon Aurora
 
-## 🔐 Key Features
+---
+
+## 🏗️ Architecture Diagram
+
+![AWS 3-Tier Architecture](./architecture/threetier-application-deployment.jpeg)
+
+---
+
+## ⚙️ Architecture Components
+
+### 🌐 1. VPC (Virtual Private Cloud)
+- Custom VPC with CIDR block
+- Public and Private subnets across multiple Availability Zones
+
+---
+
+### 🌍 2. Public Subnet (Web Tier)
+- Hosts **EC2 Web Servers**
+- Internet-facing
+- Connected via **Elastic Load Balancer**
+
+---
+
+### ⚖️ 3. Elastic Load Balancer
+- Distributes incoming traffic across multiple web servers
+- Ensures high availability and fault tolerance
+
+---
+
+### 🔐 4. Private Subnet (App Tier)
+- Hosts **Application Servers (EC2)**
+- No direct internet access
+- Communicates with Web Tier securely
+
+---
+
+### 🗄️ 5. Database Tier
+- **Amazon Aurora (RDS)**
+- Primary DB + Read Replica
 - Multi-AZ deployment for high availability
-- Public and Private subnets for security
-- Load balancing for traffic distribution
-- Database replication using Read Replica
-- Network isolation using Security Groups and NACLs
 
-## 📸 Architecture Diagram
-![Architecture](architecture-diagram.png)
+---
 
-## 📌 Steps Implemented
-1. Created VPC with CIDR block
-2. Configured public and private subnets
-3. Deployed EC2 instances for web & app tiers
-4. Configured ELB for traffic routing
-5. Set up Amazon Aurora with Read Replica
-6. Applied security groups and routing tables
+## 🔄 Workflow
 
-## 📈 Outcome
-- Improved scalability and fault tolerance
-- Ensured secure communication between tiers
-- Learned real-world cloud architecture design
+1. User sends request via Internet
+2. Request hits **Load Balancer**
+3. Load Balancer forwards traffic to **Web Tier**
+4. Web Tier communicates with **App Tier**
+5. App Tier interacts with **Aurora Database**
+6. Response flows back to the user
+
+---
+
+## 🔐 Security Features
+
+- Security Groups for each tier
+- Private subnets for App & DB
+- No direct DB exposure to internet
+- Controlled traffic between layers
+
+---
+
+## 📈 Key Features
+
+- High Availability (Multi-AZ)
+- Scalability using Load Balancer
+- Secure Architecture
+- Fault Tolerant Design
+
+---
+
+## 🛠️ Tools & Services Used
+
+- AWS VPC
+- EC2
+- Elastic Load Balancer
+- Amazon Aurora (RDS)
+- Auto Scaling (optional if used)
+- Security Groups
+
+---
+
+## 🚀 How to Deploy (Optional Section)
+
+1. Create VPC with subnets
+2. Launch EC2 instances for web & app
+3. Configure Load Balancer
+4. Setup Aurora DB
+5. Configure Security Groups
+6. Deploy application
+
+---
 
 ## 👨‍💻 Author
-Abin
+
+**Abin VA**  
+📧 abinvaliyaraa@gmail.com  
+🔗 https://www.linkedin.com/in/abin-va-37b502354
+
+---
+
+## ⭐ Conclusion
+
+This project showcases my ability to design and deploy a production-ready cloud architecture using AWS best practices.
