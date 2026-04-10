@@ -93,7 +93,7 @@ The architecture follows best practices including:
 
 ---
 
-## 🚀 How to Deploy (Optional Section)
+## 🚀 How to Deploy 
 
 1. Create VPC with subnets
 2. Launch EC2 instances for web & app
