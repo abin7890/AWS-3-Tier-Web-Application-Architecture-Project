@@ -14,7 +14,7 @@ The architecture follows best practices including:
 
 ## 🏗️ Architecture Diagram
 
-![AWS 3-Tier Architecture](./architecture/threetier-application-deployment.jpeg)
+<img src="threetier-application-deployment.jpeg" width="400"/>
 
 ---
 
